@@ -21,8 +21,9 @@ class ProductController extends Controller
         return view('products.create');
     }
 
-    public function dashboard(Request $request) {
-        return view('products.dashboard')->with('success','selamat datang di dashboard');
+    public function dashboard(Product $product)
+    {
+        return view('products.dashboard');
     }
 
     public function store(Request $request): RedirectResponse

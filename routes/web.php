@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('products', ProductController::class);
-// Route::get('products.dashboard', ProductController::class,'products.dashboard')->name('products.dashboard');
+
+Route::get('products.dashboard', [ProductController::class, 'dashboard'])->name('products.dashboard');
