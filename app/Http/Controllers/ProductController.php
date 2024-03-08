@@ -13,12 +13,16 @@ class ProductController extends Controller
         $products = Product::latest()->paginate(999);
 
         return view('products.index', compact('products'))
-            ->with('i', ($products->currentPage() - 1) * $products->perPage());
+            ->with('i');
     }
 
     public function create(): View
     {
         return view('products.create');
+    }
+
+    public function dashboard(Request $request) {
+        return view('products.dashboard')->with('success','selamat datang di dashboard');
     }
 
     public function store(Request $request): RedirectResponse
