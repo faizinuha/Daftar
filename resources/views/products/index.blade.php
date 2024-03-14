@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+
+            <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
             <div class="col-lg-12">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2>Dashboard</h2>
@@ -61,15 +64,16 @@
         document.querySelectorAll('.deleteBtn').forEach(function(button) {
             button.addEventListener('click', function(event) {
                 event.preventDefault(); // Menghentikan aksi bawaan dari tombol submit
-        
+
                 // Tampilkan konfirmasi sebelum penghapusan
                 var confirmation = confirm('Apakah Anda yakin ingin menghapus data ini?');
-        
+
                 if (confirmation) {
                     // Jika pengguna menekan "OK", kirimkan formulir penghapusan
                     this.closest('form').submit();
                 }
             });
         });
+        new DataTable('#products-table');
     </script>
 @endsection
