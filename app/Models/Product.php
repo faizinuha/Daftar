@@ -18,6 +18,7 @@ class Product extends Model
         'no_telepon',
     ];
     protected $hidden = [
+        'delete_at',
         'created_at',
         'updated_at',
     ];
